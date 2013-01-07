@@ -23,7 +23,7 @@ var worker = new RedisLockingWorker({
 worker.on("acquired", function(lastAttempt) {
 	if (Math.random() <= SUCCESS_CHANCE) {
 		console.log("Completed work successfully, cleaning up!");
-		lock.done(lastAttempt);
+		worker.done(lastAttempt);
 	} else {
 		// oh no, we failed to do work!
 		console.log("Failed to do work, hopefully someone else will have better luck!");
