@@ -18,7 +18,7 @@ var RedisLockingWorker = module.exports = function RedisLockingWorker(settings) 
 	}
 
 	if (settings.client) {
-		this.client = client;
+		this.client = settings.client;
 	} else {
 		settings.port = settings.port || 6379;
 		settings.host = settings.host || "localhost";
