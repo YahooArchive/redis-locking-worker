@@ -47,7 +47,7 @@ RedisLockingWorker.prototype.acquire = function acquire() {
 			return;
 		}
 
-		if (result) {
+		if (~~result) {
 			that.emit("acquired", false);
 		} else {
 			that.emit("locked");
